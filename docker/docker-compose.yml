@@ -1,0 +1,28 @@
+services:
+  stable-diffusion-webui:
+    #runtime: nvidia
+    image: andrespt/sd-webui
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "7860"
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ..:/stable-diffusion-webui
+      - home:/root
+    #command: /bin/bash
+    command: python3 launch.py --listen
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+#    stdin_open: true 
+#    tty: true
+
+volumes:
+  home:
