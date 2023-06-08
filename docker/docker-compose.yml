@@ -1,7 +1,7 @@
 services:
   stable-diffusion-webui:
     #runtime: nvidia
-    image: andrespt/sd-webui
+    image: andrespt/sd-webui:latest
     build:
       context: ../
       dockerfile: docker/Dockerfile
