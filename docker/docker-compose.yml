@@ -1,6 +1,5 @@
 services:
-  stable-diffusion-webui:
-    #runtime: nvidia
+  sd-webui:
     image: andrespt/sd-webui:latest
     build:
       context: ../
@@ -10,9 +9,9 @@ services:
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
     volumes:
-      - ..:/stable-diffusion-webui
+      - ../models:/content/stable-diffusion-webui/models
+      - ../outputs:/content/stable-diffusion-webui/outputs
       - home:/root
-    #command: /bin/bash
     command: python3 launch.py --listen
     deploy:
       resources:
@@ -21,8 +20,7 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
-#    stdin_open: true 
-#    tty: true
+
 
 volumes:
   home:
