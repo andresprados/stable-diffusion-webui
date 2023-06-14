@@ -7,4 +7,5 @@ else
 	compose='docker compose'
 fi
 
-$compose build
+#$compose build
+docker compose build
