@@ -1,6 +1,6 @@
 services:
   sd-webui:
-    image: andrespt/sd-webui:0.3
+    image: andrespt/sd-webui:0.4-dev
     build:
       context: ../
       dockerfile: docker/Dockerfile
