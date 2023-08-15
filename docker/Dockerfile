@@ -32,6 +32,11 @@ USER user
 RUN git clone -b iav/main https://github.com/andresprados/stable-diffusion-webui
 RUN git clone https://github.com/andresprados/adetailer /content/stable-diffusion-webui/extensions/adetailer
 RUN git clone https://github.com/andresprados/sd-webui-controlnet /content/stable-diffusion-webui/extensions/sd-webui-controlnet
+RUN git clone https://github.com/andresprados/openpose-editor /content/stable-diffusion-webui/extensions/openpose-editor
+RUN git clone https://github.com/andresprados/a1111-sd-webui-lycoris /content/stable-diffusion-webui/extensions/a1111-sd-webui-lycoris
+RUN git clone https://github.com/andresprados/sd-webui-photopea-embed /content/stable-diffusion-webui/extensions/sd-webui-photopea-embed
+RUN git clone https://github.com/andresprados/sd-webui-roop /content/stable-diffusion-webui/extensions/sd-webui-roop
+
 
 # Installation
 WORKDIR /content/stable-diffusion-webui/
